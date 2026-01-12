@@ -1,0 +1,17 @@
+datasource db {
+  provider = "sqlite"
+}
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../generated/prisma"
+}
+
+model Movie {
+  id          String   @id @default(uuid())
+  title       String
+  description String
+  image       String
+  createAt    DateTime @default(now())
+  updateAt    DateTime @updatedAt
+}
