@@ -3,6 +3,7 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 ## Tech stack:
 
 Font-end: React, TS, TAILWINDCSS, HTML
+
 Back-end: Prisma + SQLITE
 
 ## Getting Started
