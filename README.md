@@ -6,6 +6,8 @@ Font-end: React, TS, TAILWINDCSS, HTML
 
 Back-end: Prisma + SQLITE
 
+Libraries: shacn UI
+
 ## Getting Started
 
 First, run the development server:
