@@ -31,13 +31,15 @@ export async function UpdMovie(formData: FormData) {
     const title = formData.get("title") as string;
     const des = formData.get("des") as string;
 
-    await db.movie.update({
+    const movie = await db.movie.update({
         where: {id: id},
         data: {
             title: title,
             description: des,
         },
     });
+
+    console.log(movie);
 }
 
-export const allMovie = async() => await db.movie.findMany();
+

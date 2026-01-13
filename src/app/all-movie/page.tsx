@@ -1,26 +1,13 @@
-import { allMovie, DelMovie, UpdMovie } from "@/actions"
-import { Button } from "@/components/ui/button";
+"use server"
 
-const ALlMovie = async () => {
-    const movies = await allMovie();
-    return (
-        <div className="flex space-x-2 space-y-2">
-            {movies.map((movie) => (
-                <form action={UpdMovie} key={movie.id} className="space-y-2">
-                    <img src={movie.image} width={150} alt="" />
+import AllMovies from "@/components/AllMovies";
+import { db } from "../../../utils/prisma";
+import Link from "next/link";
 
-                    <input type="hidden" defaultValue={movie.id} name="id" />
-                    <input type="text" defaultValue={movie.title} name="title" /> <br />
-                    <input type="text" defaultValue={movie.description} name="des" />
-
-                    <div className="flex space-x-2">
-                        <Button type="submit">Save</Button>
-                        <Button formAction={DelMovie}>Delete</Button>
-                    </div>
-                </form>
-            ))}
-        </div>
-    )
+export default async function Page() {
+    const movies = await db.movie.findMany();
+    return <div className="m-[30px] space-y-10">
+        <AllMovies movies={movies} />;
+        <Link href="/add-movie" className="bg-black text-white rounded-lg cursor-poiter font-bold p-[10px] ">Add movie</Link> 
+    </div>
 }
-
-export default ALlMovie

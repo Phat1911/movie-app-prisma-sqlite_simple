@@ -24,7 +24,7 @@ const Home = () => {
             Add a Movie
           </button>
         </Link>
-        <Link href="/all-movies">
+        <Link href="/all-movie">
           <button
             className="px-6 py-3 bg-gray-600 hover:bg-gray-700 
           transition duration-300 ease-in-out text-white rounded-lg
